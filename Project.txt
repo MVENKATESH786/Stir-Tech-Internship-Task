@@ -1,0 +1,7 @@
+stir_internship/
+├── app.py                          # Flask application
+├── scrape_twitter.py               # Selenium script for scraping
+├── requirements.txt                # Python dependencies
+├── templates/                      # Folder for HTML templates
+│   └── index.html                  # HTML template for the Flask app
+└── static/                         # (Optional) Folder for static assets like CSS/JS

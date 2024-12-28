@@ -1,0 +1,98 @@
+
+**Requirement Document**
+
+---
+
+**Project Title:** Tech Internship Task - Web Scraping with Selenium, ProxyMesh, and MongoDB Integration
+
+---
+
+**Objective:**
+
+Develop a web application that automates the process of fetching top 5 trending topics from Twitter's homepage, utilizing Selenium for web scraping, ProxyMesh for IP rotation, storing the data in MongoDB, and displaying the results on a simple HTML page.
+
+---
+
+**Scope:**
+
+1. **Web Scraping with Selenium:**
+   - Automate logging into Twitter using predefined credentials.
+   - Navigate to the homepage and extract the top 5 trending topics from the "What’s Happening" section.
+   - Use ProxyMesh to ensure each request originates from a new IP address.
+
+2. **Data Storage with MongoDB:**
+   - Store the scraped data in a MongoDB collection.
+   - Each entry should include a unique ID, names of the top 5 trends, datetime of script completion, and the IP address used.
+
+3. **Web Application with Flask:**
+   - Develop a Flask application to serve an HTML page.
+   - The page should have a button to trigger the Selenium script execution.
+   - Display the scraped data in a specified format upon script completion.
+
+4. **Frontend Design:**
+   - Create a simple HTML page with a button to initiate the script.
+   - Display the results in a user-friendly format, including the datetime, trending topics, and IP address used.
+   - Include a JSON extract of the MongoDB record.
+
+---
+
+**Tools and Technologies:**
+
+- **Programming Language:** Python
+- **Web Scraping:** Selenium
+- **Web Framework:** Flask
+- **Database:** MongoDB (PyMongo)
+- **Proxy Service:** ProxyMesh
+- **UUID Generation:** uuid module
+- **AJAX Requests:** jQuery
+
+---
+
+**Deliverables:**
+
+1. **Selenium Script (`scrape_twitter.py`):**
+   - Handles Twitter login, data extraction, and MongoDB insertion.
+   - Configured to use ProxyMesh for IP rotation.
+
+2. **Flask Application (`app.py`):**
+   - Serves the HTML page and provides an endpoint to execute the Selenium script.
+   - Retrieves data from MongoDB and returns it in JSON format.
+
+3. **HTML Page (`templates/index.html`):**
+   - Includes a button to trigger script execution.
+   - Displays results in the specified format using AJAX requests.
+
+4. **Environment Configuration:**
+   - Instructions for setting up Python environment, installing dependencies, and configuring MongoDB.
+
+---
+
+**Testing and Validation:**
+
+- **Unit Testing:**
+  - Ensure each component (Selenium script, Flask app, HTML page) functions independently.
+  
+- **Integration Testing:**
+  - Verify seamless interaction between the Selenium script, Flask backend, and MongoDB.
+  
+- **Error Handling:**
+  - Implement try-except blocks and logging for robust error management.
+
+---
+
+**Additional Considerations:**
+
+- **Legal Compliance:**
+  - Adhere to Twitter's terms of service and ProxyMesh usage policies.
+  
+- **Security:**
+  - Avoid hardcoding sensitive information; use environment variables or configuration files.
+  
+- **Performance:**
+  - Optimize script execution and ensure it doesn't exceed rate limits or overload servers.
+
+---
+
+**Conclusion:**
+
+This project requires a systematic approach to integrate web scraping, proxy management, database operations, and web development. By addressing each component methodically and ensuring comprehensive testing, the task can be successfully completed.

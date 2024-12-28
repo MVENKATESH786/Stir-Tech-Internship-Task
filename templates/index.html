@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Selenium Script</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Stir Tech Internship Task</h1>
+    <button id="runButton">Click here to run the script</button>
+    <div id="results"></div>
+
+    <script>
+        $(document).ready(function(){
+            $('#runButton').click(function(){
+                $('#runButton').prop('disabled', true);
+                $.getJSON('/run_script', function(data){
+                    var output = '<h2>These are the most happening topics as on ' + data.date_time + '</h2>';
+                    output += '<ul>';
+                    output += '<li>' + data.name_of_trend1 + '</li>';
+                    output += '<li>' + data.name_of_trend2 + '</li>';
+                    output += '<li>' + data.name_of_trend3 + '</li>';
+                    output += '<li>' + data.name_of_trend4 + '</li>';
+                    output += '<li>' + data.name_of_trend5 + '</li>';
+                    output += '</ul>';
+                    output += '<p>The IP address used for this query was ' + data.ip_address + '.</p>';
+                    output += '<h3>Here's a JSON extract of this record from the MongoDB:</h3>';
+                    output += '<pre>' + JSON.stringify(data, null, 4) + '</pre>';
+                    $('#results').html(output);
+                    $('#runButton').prop('disabled', false);
+                }).fail(function(){
+                    alert('An error occurred while running the script.');
+                    $('#runButton').prop('disabled', false);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
